@@ -49,7 +49,11 @@ void setup() {
 
     if (!VfoDisplay::begin()) {
         Serial.println("ERROR: no se detecto el OLED en el bus I2C");
+    } else {
+        VfoDisplay::renderSplash();
+        delay(1500);
     }
+
     if (!VfoSynth::begin()) {
         Serial.println("ERROR: no se detecto el SI5351 en el bus I2C");
     }

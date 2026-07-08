@@ -1,5 +1,6 @@
 #pragma once
 #include <stdint.h>
+#include "vfo_output_settings.h"
 
 // ---------------------------------------------------------------------
 // Sintetizador (SI5351A)
@@ -21,5 +22,8 @@ void setFrequency(uint64_t freqHz);
 
 // Habilita/deshabilita la salida de RF (util para standby / TX-RX).
 void setOutputEnabled(bool enabled);
+
+// Ajusta la corriente de drive del canal CLK0.
+void setDriveStrength(DriveStrengthMa drive);
 
 } // namespace VfoSynth
